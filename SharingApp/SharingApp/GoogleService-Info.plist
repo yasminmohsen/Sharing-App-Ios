@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>387038467510-p7s2d7cqch6anss1in8t43p33a7cq1qt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.387038467510-p7s2d7cqch6anss1in8t43p33a7cq1qt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAZ3Mq2NkMyOHYiK7D1Cg5Zr-xK6IaBDaE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>387038467510</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yasminmhosen.SharingApp</string>
+	<key>PROJECT_ID</key>
+	<string>sharingapp-6dd89</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sharingapp-6dd89.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:387038467510:ios:280c7b36ac61ab70cc1d17</string>
+	<key>DATABASE_URL</key>
+	<string>https://sharingapp-6dd89.firebaseio.com</string>
+</dict>
+</plist>

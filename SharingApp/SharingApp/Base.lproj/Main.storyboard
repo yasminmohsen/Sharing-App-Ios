@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Swd-5s-AKF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Upload File-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SharingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTq-Yr-HeM" customClass="PDFView">
+                                <rect key="frame" x="10" y="140" width="384" height="564"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No File To Be Uploaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-aB-NhH">
+                                <rect key="frame" x="99.5" y="436" width="215" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-Xf-RlD">
+                                <rect key="frame" x="107" y="738" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Kgj-UJ-IQu"/>
+                                    <constraint firstAttribute="height" constant="50" id="rot-98-wiB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tth-jg-F7c"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gaw-nG-w3u">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="0.47337863869863012" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="bsa-6y-Yax"/>
+                                    <constraint firstAttribute="height" constant="673" id="cjv-de-2y7"/>
+                                </constraints>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gaw-nG-w3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4ib-eF-awz"/>
+                            <constraint firstItem="8ku-aB-NhH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="88A-gr-Ikv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cVE-Xf-RlD" secondAttribute="bottom" constant="25" id="ApH-W5-KkD"/>
+                            <constraint firstItem="Gaw-nG-w3u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="28.5" id="Z8e-rd-jIF"/>
+                            <constraint firstItem="nTq-Yr-HeM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dti-sr-aMw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nTq-Yr-HeM" secondAttribute="trailing" constant="20" id="fYU-b9-V2f"/>
+                            <constraint firstItem="8ku-aB-NhH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gu4-Rx-xHa"/>
+                            <constraint firstItem="cVE-Xf-RlD" firstAttribute="top" secondItem="nTq-Yr-HeM" secondAttribute="bottom" constant="34" id="uSW-tp-c5a"/>
+                            <constraint firstItem="nTq-Yr-HeM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ulL-5e-1jJ"/>
+                            <constraint firstItem="cVE-Xf-RlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xno-Td-tYe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upload File" id="Gdk-Fh-e0L"/>
+                    <connections>
+                        <outlet property="activityIndecator" destination="Gaw-nG-w3u" id="X5i-T9-4MH"/>
+                        <outlet property="noFileLabel" destination="8ku-aB-NhH" id="LdD-N0-QLS"/>
+                        <outlet property="pdfView" destination="nTq-Yr-HeM" id="vsW-6T-p5B"/>
+                        <outlet property="uploadBtn" destination="cVE-Xf-RlD" id="GmO-ze-2X4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731.8840579710147" y="98.4375"/>
+        </scene>
+        <!--Sent Files-->
+        <scene sceneID="AAO-ZI-Dfv">
+            <objects>
+                <tableViewController id="WyJ-PZ-c4J" customClass="FileslTableViewController" customModule="SharingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sh2-Jj-Nd6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="zlM-PQ-g0N" style="IBUITableViewCellStyleDefault" id="VyY-AT-t7B">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VyY-AT-t7B" id="TBS-pl-YSB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zlM-PQ-g0N">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WyJ-PZ-c4J" id="lic-5r-jll"/>
+                            <outlet property="delegate" destination="WyJ-PZ-c4J" id="ATu-df-8C1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sent Files" id="q4j-II-wXn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uR9-dr-C8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986.95652173913049" y="805.58035714285711"/>
+        </scene>
+        <!--Viewer-->
+        <scene sceneID="kqO-6W-ttt">
+            <objects>
+                <viewController storyboardIdentifier="PdfViewer" id="hMx-oW-9qb" customClass="PDFViewer" customModule="SharingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYH-pR-QOI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pf7-IC-Mmv" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pf7-IC-Mmv" firstAttribute="leading" secondItem="utE-uY-VkH" secondAttribute="leading" id="Hu9-p2-bOR"/>
+                            <constraint firstItem="utE-uY-VkH" firstAttribute="trailing" secondItem="Pf7-IC-Mmv" secondAttribute="trailing" id="YX8-W8-uA3"/>
+                            <constraint firstItem="Pf7-IC-Mmv" firstAttribute="top" secondItem="utE-uY-VkH" secondAttribute="top" id="coa-dK-LCs"/>
+                            <constraint firstItem="utE-uY-VkH" firstAttribute="bottom" secondItem="Pf7-IC-Mmv" secondAttribute="bottom" id="pwx-aF-56H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="utE-uY-VkH"/>
+                    </view>
+                    <connections>
+                        <outlet property="pdfView" destination="Pf7-IC-Mmv" id="G5Q-F2-c3e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeb-TN-eiu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="802"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Gwv-j5-E5x">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Swd-5s-AKF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FVT-gL-qQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Li3-FB-hWd" kind="relationship" relationship="viewControllers" id="XF1-Ii-Ina"/>
+                        <segue destination="ul7-oa-SNX" kind="relationship" relationship="viewControllers" id="hpB-IC-cO7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sbW-Dt-iIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </scene>
+        <!--Sent Files-->
+        <scene sceneID="F1s-Zf-nhh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ul7-oa-SNX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sent Files" image="folder.fill" catalog="system" selectedImage="folder.fill" id="TWN-tn-3Fj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ptv-e3-aCQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WyJ-PZ-c4J" kind="relationship" relationship="rootViewController" id="vxm-MO-Guh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="civ-b9-XgW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76.811594202898561" y="805.58035714285711"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Udc-hS-kOV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Li3-FB-hWd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="square.and.arrow.up.fill" catalog="system" selectedImage="square.and.arrow.up.fill" id="8x4-fK-P4p"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="c8c-mh-e4h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LOg-zc-hyH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2n-p4-1hN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder.fill" catalog="system" width="64" height="46"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
+    </resources>
+</document>
