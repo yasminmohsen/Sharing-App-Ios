@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var uploadBtn: UIButton!
     
+    @IBOutlet weak var removeBtn: UIButton!
     
     var uploadsArray = [Uploads]()
     
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         
         activityIndecator.alpha=0;
         uploadBtn.alpha=0;
+        removeBtn.alpha=0;
         
         getDataFromSharing()
     }
@@ -42,6 +44,7 @@ class ViewController: UIViewController {
     @objc func willEnterForeground() {
         activityIndecator.alpha=0;
         uploadBtn.alpha=0;
+         removeBtn.alpha=0;
         getDataFromSharing()
         
     }
@@ -78,6 +81,8 @@ class ViewController: UIViewController {
             let uploadTask = fileRef.putData(fileData, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
                     print("meta data derror")// Uh-oh, an error occurred!
+                    self.activityIndecator.stopAnimating()
+                    self.activityIndecator.alpha=0
                     self.showToast(message: "Unable To Upload File!!")
                     return
                 }
@@ -86,6 +91,8 @@ class ViewController: UIViewController {
                 // You can also access to download URL after upload.
                 fileRef.downloadURL { (url, error) in
                     guard let downloadURL = url else {
+                        self.activityIndecator.stopAnimating()
+                        self.activityIndecator.alpha=0
                         self.showToast(message: "Unable To Upload File!!")
                         return
                     }
@@ -98,6 +105,9 @@ class ViewController: UIViewController {
                     self.pdfView.alpha=0
                     self.showToast(message: "Sucessful Uploading File ✅")
                     self.noFileLabel.alpha=1
+                    self.removeBtn.alpha=0
+                    self.uploadBtn.alpha=0
+                    
                     
                     // retrieving data from userDefaults
                     
@@ -110,7 +120,7 @@ class ViewController: UIViewController {
                     if (self.uploadsArray.count != 0){
                         for u in self.uploadsArray {
                             
-                            if (u.fileData == self.uploadsObj.fileData){
+                            if (u.name == self.uploadsObj.name){
                                 break
                             }
                             else{
@@ -190,6 +200,7 @@ class ViewController: UIViewController {
             
             savingFlag = true
             uploadBtn.alpha=1
+             removeBtn.alpha=1
             
             
             let data = NSData(base64Encoded: restoredValue, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
@@ -251,6 +262,48 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
+    
+    
+    
+    
+    @IBAction func removeBtn(_ sender: Any) {
+        
+   
+        
+        
+        let alert = UIAlertController(title: "Remove File", message: "are you sure you want to remove this file", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "yes", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> () in
+                  self.activityIndecator.alpha=0
+                                       self.pdfView.alpha=0
+                                       
+                                       self.noFileLabel.alpha=1
+            self.removeBtn.alpha=0
+            self.uploadBtn.alpha=0
+                     var defaults = UserDefaults(suiteName: "group.com.yasminmhosen.SharingApp")
+                                      defaults?.set(nil, forKey: "pdfData")
+                               }))
+        
+        
+               alert.addAction(UIAlertAction(title: "cancel", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction!) -> () in
+                self.dismiss(animated: true, completion: nil)
+                                           }))
+                    
+               
+                   self.present(alert, animated: true, completion: nil)
+           
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
     
