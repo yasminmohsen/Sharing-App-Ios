@@ -70,7 +70,32 @@ class ShareViewController:UIViewController  {
                                 defaults?.synchronize()
                            
                             }
+//                              let sharedKey = "shareappKey"
+//                            let url = URL(string: "YourOwnURLscheme:\(sharedKey)")
+//                                   var responder = self as UIResponder?
+//                                   let selectorOpenURL = sel_registerName("openURL:")
+//                                   while (responder != nil) {
+//                                       if (responder?.responds(to: selectorOpenURL))! {
+//                                           let _ = responder?.perform(selectorOpenURL, with: url)
+//                                       }
+//                                       responder = responder!.next
+//                                   }
+                            let sharedKey = "sharedKey://"
+                            let urlString = "\(sharedKey)"
+                            let url = NSURL(string:urlString)
+                            let context = NSExtensionContext()
+                            context.open(url! as URL, completionHandler: nil)
+
+                            var responder = self as UIResponder?
+
+                            while (responder != nil){
+                                if responder?.responds(to: Selector("openURL:")) == true{
+                                    responder?.perform(Selector("openURL:"), with: url)
+                                }
+                                responder = responder!.next
+                            }
                             self.extensionContext?.completeRequest(returningItems: [], completionHandler:nil)
+                            
                         }
                     }
                 }))
